@@ -46,9 +46,14 @@ class BooksController < ApplicationController
       end
     end
   end
+  
+  def delete
+    @book = Book.find(params[:id])
+  end
 
   # DELETE /books/1 or /books/1.json
   def destroy
+    @book = Book.find(params[:id])
     @book.destroy
 
     respond_to do |format|
@@ -56,7 +61,7 @@ class BooksController < ApplicationController
       format.json { head :no_content }
     end
   end
-
+  
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_book

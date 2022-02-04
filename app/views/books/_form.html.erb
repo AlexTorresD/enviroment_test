@@ -27,6 +27,7 @@
   </div>
   
   <div class="field">
+    <%= form.date_select :dateinstructed, :order => [:day, :month, :year] %>
     <%= form.label :price %>
     <%= form.text_field :price %>
   </div>
